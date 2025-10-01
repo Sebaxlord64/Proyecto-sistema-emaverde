@@ -1,0 +1,61 @@
+/* === Personalización Verde === */
+
+/* Barra superior */
+.navbar-custom {
+    background-color: #0b7d3f !important;
+    border-bottom: 2px solid #0b7d3f;
+}
+
+/* Menú lateral */
+.left-side-menu {
+    background-color: #064d2f !important;
+}
+
+.left-side-menu .menu-title,
+.left-side-menu .metismenu a {
+    color: #ffffff !important;
+}
+
+.left-side-menu .metismenu a:hover,
+.left-side-menu .metismenu li.active > a {
+    background-color: #064d2f !important;
+    color: #ffffff !important;
+}
+
+/* Botón hamburguesa */
+.button-menu-mobile span {
+    background-color: #c8e6c9 !important;
+}
+
+/* Footer */
+.footer {
+    background-color: #e8f5e9 !important;
+    color: #0b7d3f;
+    border-top: 1px solid #c8e6c9;
+}
+
+/* Título del panel */
+.display-4 {
+    color: #0b7d3f;
+}
+
+/* Botón cerrar sesión */
+.btn.text-danger {
+    color: #ffffff !important;
+    background-color: #388e3c;
+    border: none;
+}
+
+.btn.text-danger:hover {
+    background-color: #2e7d32;
+}
+.logo-box {
+    background-color: #0b7d3f !important; /* Verde oscuro */
+    border-right: 1px solid #0b7d3f; /* Opcional: línea divisoria */
+}
+/* Logo grande en la barra superior */
+.logo-box img {
+    height: 60px !important; /* o prueba con 50px, según tu preferencia */
+    width: auto;
+    max-height: none;
+}
