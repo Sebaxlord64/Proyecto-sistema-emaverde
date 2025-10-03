@@ -24,7 +24,17 @@ class AdministracionController extends Controller
     {
         switch ($request->tipo) {
             case 'espacio':
-                Espacio::create($request->only('nombre', 'capacidad', 'estado'));
+                Espacio::create($request->only(
+                    'nombre',
+                    'capacidad',
+                    'estado',
+                    'tipo_cancha',
+                    'tipo_suelo',
+                    'tipo_area',
+                    'cantidad_espectadores',
+                    'salidas_emergencia',
+                    'cantidad_vestuarios'
+                ));
                 break;
 
             case 'horario':
@@ -48,7 +58,17 @@ class AdministracionController extends Controller
     {
         switch ($request->tipo) {
             case 'espacio':
-                Espacio::findOrFail($id)->update($request->only('nombre', 'capacidad', 'estado'));
+                Espacio::findOrFail($id)->update($request->only(
+                    'nombre',
+                    'capacidad',
+                    'estado',
+                    'tipo_cancha',
+                    'tipo_suelo',
+                    'tipo_area',
+                    'cantidad_espectadores',
+                    'salidas_emergencia',
+                    'cantidad_vestuarios'
+                ));
                 break;
 
             case 'horario':

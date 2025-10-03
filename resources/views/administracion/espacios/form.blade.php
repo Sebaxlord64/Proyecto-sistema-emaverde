@@ -1,6 +1,65 @@
-<input type="text" name="nombre" placeholder="Nombre" value="{{ old('nombre', $espacio->nombre ?? '') }}" required>
-<input type="number" name="capacidad" placeholder="Capacidad" value="{{ old('capacidad', $espacio->capacidad ?? '') }}" required>
-<select name="estado" required>
-    <option value="disponible" {{ (old('estado', $espacio->estado ?? '') == 'disponible') ? 'selected' : '' }}>Disponible</option>
-    <option value="no disponible" {{ (old('estado', $espacio->estado ?? '') == 'no disponible') ? 'selected' : '' }}>No disponible</option>
-</select>
+<div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" name="nombre"
+           value="{{ old('nombre', $espacio->nombre ?? '') }}" required>
+</div>
+
+<div class="mb-3">
+    <label for="capacidad" class="form-label">Capacidad</label>
+    <input type="number" class="form-control" name="capacidad"
+           value="{{ old('capacidad', $espacio->capacidad ?? '') }}" required>
+    <small class="text-muted">Número de personas</small>
+</div>
+
+<div class="mb-3">
+    <label for="estado" class="form-label">Estado</label>
+    <select name="estado" class="form-control" required>
+        <option value="disponible"
+            {{ (old('estado', $espacio->estado ?? '') == 'disponible') ? 'selected' : '' }}>
+            Disponible
+        </option>
+        <option value="no disponible"
+            {{ (old('estado', $espacio->estado ?? '') == 'no disponible') ? 'selected' : '' }}>
+            No disponible
+        </option>
+    </select>
+</div>
+
+<div class="mb-3">
+    <label for="tipo_cancha" class="form-label">Tipo de Cancha</label>
+    <input type="text" class="form-control" name="tipo_cancha"
+           value="{{ old('tipo_cancha', $espacio->tipo_cancha ?? '') }}"
+           placeholder="Ejemplo: Fútbol 11, Futsal">
+</div>
+
+<div class="mb-3">
+    <label for="tipo_suelo" class="form-label">Tipo de Suelo</label>
+    <input type="text" class="form-control" name="tipo_suelo"
+           value="{{ old('tipo_suelo', $espacio->tipo_suelo ?? '') }}"
+           placeholder="Ejemplo: Césped, Cemento">
+</div>
+
+<div class="mb-3">
+    <label for="tipo_area" class="form-label">Tipo de Área</label>
+    <input type="text" class="form-control" name="tipo_area"
+           value="{{ old('tipo_area', $espacio->tipo_area ?? '') }}"
+           placeholder="Ejemplo: Luces, Techo, etc.">
+</div>
+
+<div class="mb-3">
+    <label for="cantidad_espectadores" class="form-label">Cantidad de Espectadores</label>
+    <input type="number" class="form-control" name="cantidad_espectadores"
+           value="{{ old('cantidad_espectadores', $espacio->cantidad_espectadores ?? '') }}">
+</div>
+
+<div class="mb-3">
+    <label for="salidas_emergencia" class="form-label">Salidas de Emergencia</label>
+    <input type="number" class="form-control" name="salidas_emergencia"
+           value="{{ old('salidas_emergencia', $espacio->salidas_emergencia ?? '') }}">
+</div>
+
+<div class="mb-3">
+    <label for="cantidad_vestuarios" class="form-label">Cantidad de Vestuarios</label>
+    <input type="number" class="form-control" name="cantidad_vestuarios"
+           value="{{ old('cantidad_vestuarios', $espacio->cantidad_vestuarios ?? '') }}">
+</div>
