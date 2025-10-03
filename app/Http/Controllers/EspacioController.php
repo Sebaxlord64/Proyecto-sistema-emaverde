@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Espacio;
@@ -23,6 +24,9 @@ class EspacioController extends Controller
             'nombre' => 'required|max:100',
             'capacidad' => 'required|integer',
             'estado' => 'required|in:disponible,no disponible',
+            'tipo_cancha' => 'nullable|string|max:100',
+            'tipo_suelo'  => 'nullable|string|max:100',
+            'tipo_area'   => 'nullable|string|max:255',
         ]);
 
         Espacio::create($request->all());
@@ -41,6 +45,9 @@ class EspacioController extends Controller
             'nombre' => 'required|max:100',
             'capacidad' => 'required|integer',
             'estado' => 'required|in:disponible,no disponible',
+            'tipo_cancha' => 'nullable|string|max:100',
+            'tipo_suelo'  => 'nullable|string|max:100',
+            'tipo_area'   => 'nullable|string|max:255',
         ]);
 
         $espacio->update($request->all());

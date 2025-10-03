@@ -18,6 +18,7 @@
 
     <div class="tab-content mt-4" id="adminTabsContent">
     
+        {{-- TAB ESPACIOS --}}
         <div class="tab-pane fade show active" id="espacios" role="tabpanel">
             <div class="d-flex justify-content-between mb-3">
                 <h4>Lista de Espacios</h4>
@@ -28,20 +29,35 @@
 
             <table class="table table-bordered" id="tabla-espacios">
                 <thead>
-                    <tr><th>Nombre</th><th>Capacidad</th><th>Estado</th><th>Acciones</th></tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Capacidad</th>
+                        <th>Estado</th>
+                        <th>Tipo Cancha</th>
+                        <th>Tipo Suelo</th>
+                        <th>Área</th>
+                        <th>Acciones</th>
+                    </tr>
                 </thead>
                 <tbody>
                     @foreach($espacios as $e)
                     <tr>
                         <td>{{ $e->nombre }}</td>
-                        <td>{{ $e->capacidad }}</td>
+                        <td>{{ $e->capacidad }} personas</td>
                         <td>{{ $e->estado }}</td>
+                        <td>{{ $e->tipo_cancha }}</td>
+                        <td>{{ $e->tipo_suelo }}</td>
+                        <td>{{ $e->tipo_area }}</td>
                         <td>
-                            <a href="{{ route('admin.espacios.edit', $e->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="{{ route('admin.espacios.edit', $e->id) }}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
                             <form method="POST" action="{{ route('admin.delete', $e->id) }}" class="d-inline">
                                 @csrf @method('DELETE')
                                 <input type="hidden" name="tipo" value="espacio">
-                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>
@@ -50,6 +66,7 @@
             </table>
         </div>
 
+        {{-- TAB HORARIOS --}}
         <div class="tab-pane fade" id="horarios" role="tabpanel">
             <div class="d-flex justify-content-between mb-3">
                 <h4>Lista de Horarios</h4>
@@ -70,11 +87,15 @@
                         <td>{{ $h->hora_inicio }}</td>
                         <td>{{ $h->hora_fin }}</td>
                         <td>
-                            <a href="{{ route('admin.horarios.edit', $h->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="{{ route('admin.horarios.edit', $h->id) }}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
                             <form method="POST" action="{{ route('admin.delete', $h->id) }}" class="d-inline">
                                 @csrf @method('DELETE')
                                 <input type="hidden" name="tipo" value="horario">
-                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>
@@ -83,6 +104,7 @@
             </table>
         </div>
 
+        {{-- TAB UBICACIONES --}}
         <div class="tab-pane fade" id="ubicaciones" role="tabpanel">
             <div class="d-flex justify-content-between mb-3">
                 <h4>Lista de Ubicaciones</h4>
@@ -109,11 +131,15 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('admin.ubicaciones.edit', $u->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="{{ route('admin.ubicaciones.edit', $u->id) }}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
                             <form method="POST" action="{{ route('admin.delete', $u->id) }}" class="d-inline">
                                 @csrf @method('DELETE')
                                 <input type="hidden" name="tipo" value="ubicacion">
-                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>
