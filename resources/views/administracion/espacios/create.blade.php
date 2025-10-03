@@ -19,6 +19,10 @@
         <input type="text" name="tipo_suelo" placeholder="Tipo de Suelo (ej: Césped, Cemento)" class="form-control mb-3">
         <input type="text" name="tipo_area" placeholder="Tipo de Área (ej: Luces, Techo, etc.)" class="form-control mb-3">
 
+        <input type="number" name="cantidad_espectadores" placeholder="Cantidad de Espectadores" class="form-control mb-3">
+        <input type="number" name="salidas_emergencia" placeholder="Salidas de Emergencia" class="form-control mb-3">
+        <input type="number" name="cantidad_vestuarios" placeholder="Cantidad de Vestuarios" class="form-control mb-3">
+
         <button class="btn btn-success">Guardar</button>
         <a href="{{ url('/administracion') }}" class="btn btn-secondary">Cancelar</a>
     </form>

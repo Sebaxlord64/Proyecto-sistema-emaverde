@@ -45,3 +45,21 @@
            value="{{ old('tipo_area', $espacio->tipo_area ?? '') }}"
            placeholder="Ejemplo: Luces, Techo, etc.">
 </div>
+
+<div class="mb-3">
+    <label for="cantidad_espectadores" class="form-label">Cantidad de Espectadores</label>
+    <input type="number" class="form-control" name="cantidad_espectadores"
+           value="{{ old('cantidad_espectadores', $espacio->cantidad_espectadores ?? '') }}">
+</div>
+
+<div class="mb-3">
+    <label for="salidas_emergencia" class="form-label">Salidas de Emergencia</label>
+    <input type="number" class="form-control" name="salidas_emergencia"
+           value="{{ old('salidas_emergencia', $espacio->salidas_emergencia ?? '') }}">
+</div>
+
+<div class="mb-3">
+    <label for="cantidad_vestuarios" class="form-label">Cantidad de Vestuarios</label>
+    <input type="number" class="form-control" name="cantidad_vestuarios"
+           value="{{ old('cantidad_vestuarios', $espacio->cantidad_vestuarios ?? '') }}">
+</div>

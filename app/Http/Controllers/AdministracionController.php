@@ -30,7 +30,10 @@ class AdministracionController extends Controller
                     'estado',
                     'tipo_cancha',
                     'tipo_suelo',
-                    'tipo_area'
+                    'tipo_area',
+                    'cantidad_espectadores',
+                    'salidas_emergencia',
+                    'cantidad_vestuarios'
                 ));
                 break;
 
@@ -61,7 +64,10 @@ class AdministracionController extends Controller
                     'estado',
                     'tipo_cancha',
                     'tipo_suelo',
-                    'tipo_area'
+                    'tipo_area',
+                    'cantidad_espectadores',
+                    'salidas_emergencia',
+                    'cantidad_vestuarios'
                 ));
                 break;
 

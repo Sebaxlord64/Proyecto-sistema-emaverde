@@ -18,6 +18,10 @@
         <input type="text" name="tipo_suelo" value="{{ $espacio->tipo_suelo }}" placeholder="Tipo de Suelo" class="form-control mb-3">
         <input type="text" name="tipo_area" value="{{ $espacio->tipo_area }}" placeholder="Tipo de Área" class="form-control mb-3">
 
+        <input type="number" name="cantidad_espectadores" value="{{ $espacio->cantidad_espectadores }}" placeholder="Cantidad de Espectadores" class="form-control mb-3">
+        <input type="number" name="salidas_emergencia" value="{{ $espacio->salidas_emergencia }}" placeholder="Salidas de Emergencia" class="form-control mb-3">
+        <input type="number" name="cantidad_vestuarios" value="{{ $espacio->cantidad_vestuarios }}" placeholder="Cantidad de Vestuarios" class="form-control mb-3">
+
         <button class="btn btn-success">Guardar Cambios</button>
         <a href="{{ route('admin.panel') }}" class="btn btn-secondary">Cancelar</a>
     </form>

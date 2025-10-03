@@ -27,6 +27,9 @@ class EspacioController extends Controller
             'tipo_cancha' => 'nullable|string|max:100',
             'tipo_suelo'  => 'nullable|string|max:100',
             'tipo_area'   => 'nullable|string|max:255',
+            'cantidad_espectadores' => 'nullable|integer|min:0',
+            'salidas_emergencia'    => 'nullable|integer|min:0',
+            'cantidad_vestuarios'   => 'nullable|integer|min:0',
         ]);
 
         Espacio::create($request->all());
@@ -48,6 +51,9 @@ class EspacioController extends Controller
             'tipo_cancha' => 'nullable|string|max:100',
             'tipo_suelo'  => 'nullable|string|max:100',
             'tipo_area'   => 'nullable|string|max:255',
+            'cantidad_espectadores' => 'nullable|integer|min:0',
+            'salidas_emergencia'    => 'nullable|integer|min:0',
+            'cantidad_vestuarios'   => 'nullable|integer|min:0',
         ]);
 
         $espacio->update($request->all());
