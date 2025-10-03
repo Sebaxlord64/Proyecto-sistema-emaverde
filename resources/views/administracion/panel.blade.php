@@ -25,7 +25,57 @@
                 <a href="{{ route('admin.espacios.create') }}" class="btn btn-success">Agregar Espacio</a>
             </div>
 
-            <input type="text" class="form-control mb-3 filtro-tabla" placeholder="Filtrar Espacios..." data-tabla="espacios">
+            {{-- FILTROS POR COLUMNA --}}
+            <div class="row">
+                {{-- Fila superior: 4 filtros --}}
+                <div class="col-md-3 mb-2">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Nombre..."
+                           data-table="tabla-espacios" data-col="0" data-type="text">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Capacidad..."
+                           data-table="tabla-espacios" data-col="1" data-type="number">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Estado..."
+                           data-table="tabla-espacios" data-col="2" data-type="text">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Tipo Cancha..."
+                           data-table="tabla-espacios" data-col="3" data-type="text">
+                </div>
+
+                {{-- Fila inferior: 5 filtros --}}
+                <div class="col-md-2 mb-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Tipo Suelo..."
+                           data-table="tabla-espacios" data-col="4" data-type="text">
+                </div>
+                <div class="col-md-2 mb-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Área..."
+                           data-table="tabla-espacios" data-col="5" data-type="text">
+                </div>
+                <div class="col-md-2 mb-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Espectadores..."
+                           data-table="tabla-espacios" data-col="6" data-type="number">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Emergencias..."
+                           data-table="tabla-espacios" data-col="7" data-type="number">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Vestuarios..."
+                           data-table="tabla-espacios" data-col="8" data-type="number">
+                </div>
+            </div>
 
             <table class="table table-bordered" id="tabla-espacios">
                 <thead>
@@ -51,27 +101,9 @@
                         <td>{{ $e->tipo_cancha ?? 'N/D' }}</td>
                         <td>{{ $e->tipo_suelo ?? 'N/D' }}</td>
                         <td>{{ $e->tipo_area ?? 'N/D' }}</td>
-                        <td>
-                            @if($e->cantidad_espectadores)
-                                {{ $e->cantidad_espectadores }} espectadores
-                            @else
-                                <span class="text-muted">N/D</span>
-                            @endif
-                        </td>
-                        <td>
-                            @if($e->salidas_emergencia)
-                                {{ $e->salidas_emergencia }} salidas
-                            @else
-                                <span class="text-muted">N/D</span>
-                            @endif
-                        </td>
-                        <td>
-                            @if($e->cantidad_vestuarios)
-                                {{ $e->cantidad_vestuarios }} vestuarios
-                            @else
-                                <span class="text-muted">N/D</span>
-                            @endif
-                        </td>
+                        <td>{{ $e->cantidad_espectadores ? $e->cantidad_espectadores.' espectadores' : 'N/D' }}</td>
+                        <td>{{ $e->salidas_emergencia ? $e->salidas_emergencia.' salidas' : 'N/D' }}</td>
+                        <td>{{ $e->cantidad_vestuarios ? $e->cantidad_vestuarios.' vestuarios' : 'N/D' }}</td>
                         <td>
                             <div class="d-flex">
                                 <a href="{{ route('admin.espacios.edit', $e->id) }}" class="btn btn-warning btn-sm mr-2">
@@ -99,15 +131,37 @@
                 <a href="{{ route('admin.horarios.create') }}" class="btn btn-success">Agregar Horario</a>
             </div>
 
-            <input type="text" class="form-control mb-3 filtro-tabla" placeholder="Filtrar Horarios..." data-tabla="horarios">
+            {{-- FILTROS POR COLUMNA --}}
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Espacio..."
+                           data-table="tabla-horarios" data-col="0" data-type="text">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Día..."
+                           data-table="tabla-horarios" data-col="1" data-type="text">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Hora de Inicio..."
+                           data-table="tabla-horarios" data-col="2" data-type="hour">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Hora de Fin..."
+                           data-table="tabla-horarios" data-col="3" data-type="hour">
+                </div>
+            </div>
 
             <table class="table table-bordered" id="tabla-horarios">
                 <thead>
                     <tr>
                         <th>Espacio</th>
                         <th>Día</th>
-                        <th>Inicio</th>
-                        <th>Fin</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Fin</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -145,7 +199,24 @@
                 <a href="{{ route('admin.ubicaciones.create') }}" class="btn btn-success">Agregar Ubicación</a>
             </div>
 
-            <input type="text" class="form-control mb-3 filtro-tabla" placeholder="Filtrar Ubicaciones..." data-tabla="ubicaciones">
+            {{-- FILTROS POR COLUMNA --}}
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Espacio..."
+                           data-table="tabla-ubicaciones" data-col="0" data-type="text">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Zona..."
+                           data-table="tabla-ubicaciones" data-col="1" data-type="text">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control filtro-advanced"
+                           placeholder="Calle..."
+                           data-table="tabla-ubicaciones" data-col="2" data-type="text">
+                </div>
+            </div>
 
             <table class="table table-bordered" id="tabla-ubicaciones">
                 <thead>
@@ -191,17 +262,69 @@
         </div>
     </div>
 </div>
-<script>
-    document.querySelectorAll('.filtro-tabla').forEach(input => {
-        input.addEventListener('keyup', function () {
-            const tablaId = 'tabla-' + this.dataset.tabla;
-            const filtro = this.value.toLowerCase();
-            const filas = document.querySelectorAll(`#${tablaId} tbody tr`);
 
-            filas.forEach(fila => {
-                const textoFila = fila.textContent.toLowerCase();
-                fila.style.display = textoFila.includes(filtro) ? '' : 'none';
-            });
+{{-- ================== SCRIPTS DE FILTRADO ================== --}}
+<script>
+    // normaliza texto (sin mayúsculas ni acentos)
+    function normalizar(texto) {
+        return (texto || '')
+            .toString()
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    // aplica todos los filtros activos de una tabla a sus filas
+    function filtrarTabla(tableId) {
+        const tabla = document.getElementById(tableId);
+        if (!tabla) return;
+
+        const inputs = document.querySelectorAll(`.filtro-advanced[data-table="${tableId}"]`);
+        const filtros = Array.from(inputs).map(inp => ({
+            col: parseInt(inp.dataset.col, 10),
+            tipo: inp.dataset.type,                 
+            valor: inp.value.trim()
+        }));
+
+        const filas = tabla.querySelectorAll('tbody tr');
+
+        filas.forEach(fila => {
+            let visible = true;
+
+            for (const f of filtros) {
+                const celda = fila.cells[f.col];
+                if (!celda) continue;
+
+                const textoCelda = celda.textContent.trim();
+
+                if (f.valor === '') continue;
+
+                if (f.tipo === 'text') {
+                    visible = normalizar(textoCelda).includes(normalizar(f.valor));
+                } else if (f.tipo === 'number') {
+                    const numCelda = (textoCelda.match(/\d+/) || [''])[0];
+                    const numFiltro = f.valor.replace(/\D+/g, '');
+                    visible = numCelda.startsWith(numFiltro);
+                } else if (f.tipo === 'hour') {
+                    const horaCelda = (textoCelda.split(':')[0] || '').trim();
+                    const horaFiltro = f.valor.replace(/\D+/g, '');
+                    visible = horaCelda.startsWith(horaFiltro);
+                }
+
+                if (!visible) break;
+            }
+
+            fila.style.display = visible ? '' : 'none';
+        });
+    }
+
+    // listeners
+    document.querySelectorAll('.filtro-advanced').forEach(input => {
+        input.addEventListener('keyup', function () {
+            filtrarTabla(this.dataset.table);
+        });
+        input.addEventListener('change', function () {
+            filtrarTabla(this.dataset.table);
         });
     });
 </script>
