@@ -33,6 +33,14 @@
             </select>
         </div>
 
+
+        <div class="text-end mb-3">
+            <a href="{{ route('reservas.vista3d', 1) }}" class="btn btn-info">
+                Ver espacio deportivo
+            </a>
+        </div>
+
+
         <div class="mb-3">
             <label>Horario</label>
             <select name="id_horario" id="horario-select" class="form-control" required disabled>

@@ -1,28 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-
- <div class="container-fluid">
-                <div class="d-flex justify-content-center align-items-start" style="margin-top: 120px;">
-                    <div class="d-flex flex-row flex-wrap justify-content-center" style="gap: 30px; max-width: 900px;">
-                        <!-- Imagen -->
-                        <div>
-                            <img src="/images/imagen_muestra.png" class="img-fluid rounded shadow" alt="Novedades" style="max-width: 700px;">
-                        </div>
-                        
-                        <!-- Tarjeta de texto -->
-                        <div>
-                            <div class="card p-4 shadow" style="background-color: #006400; color: white; max-width: 400px;">
-                                <h4 class="font-weight-bold text-white mb-3 text-left">NOVEDADES</h4>
-                                <p class="text-white" style="text-align: left; font-size: 14px;">
-                                    ¡Ya están abiertas las inscripciones para el Torneo PUC F5!<br>
-                                    Participa cumpliendo tres simples pasos y forma parte de esta gran experiencia deportiva.<br>
-                                    <strong>Inicio del torneo: Octubre.</strong>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+<div class="container-fluid py-5" style="min-height: 80vh;">
+    <div class="row align-items-start g-4">
+        <!-- Tarjeta de texto (izquierda superior) -->
+        <div class="col-12 col-md-4 d-flex justify-content-start">
+            <div class="card shadow p-4 w-100" 
+                 style="background-color: #006400; color: white; border-radius: 12px; min-height: 350px;">
+                <h3 class="fw-bold text-white mb-3">NOVEDADES</h3>
+                <p class="text-white" style="font-size: 1.1rem; line-height: 1.6;">
+                    ¡Ya están abiertas las inscripciones para el <strong>Torneo PUC F5</strong>!<br><br>
+                    Participa cumpliendo tres simples pasos y forma parte de esta gran experiencia deportiva.<br><br>
+                    <strong>Inicio del torneo: Octubre.</strong>
+                </p>
             </div>
-            @endsection
+        </div>
+
+        <!-- Imagen (derecha, grande) -->
+        <div class="col-12 col-md-8 d-flex justify-content-center align-items-start">
+            <img src="/images/Torneo_pucF5-1.jpg" 
+                 class="img-fluid rounded shadow" 
+                 alt="Novedades"
+                 style="width: 100%; max-width: 1100px; height: auto; border-radius: 12px;">
+        </div>
+    </div>
+</div>
+@endsection

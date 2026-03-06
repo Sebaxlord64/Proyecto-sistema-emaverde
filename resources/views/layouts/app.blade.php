@@ -148,13 +148,6 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('analisis-reservas.index') }}">
-                                <i class="fas fa-chart-bar"></i>
-                                <span>Análisis estadístico</span>
-                                <div class="menu-tooltip">Análisis estadístico</div>
-                            </a>
-                        </li>
-                        <li>
                             <a href="{{ route('reservas-pendientes.index') }}">
                                 <i class="fas fa-hourglass-half"></i>
                                 <span>Reservas pendientes</span>

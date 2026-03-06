@@ -122,6 +122,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/horarios-disponibles/{espacio}/{fecha}', [ReservaController::class, 'horariosDisponibles']);
     // Ubicación por espacio (para cargar id_ubicacion oculto)
     Route::get('/ubicacion-id-por-espacio/{id}', [ReservaController::class, 'ubicacionPorEspacio']);
+    
+    // Visualizacion en 3d
+    Route::get('/reservas/{id}/vista3d', [ReservaController::class, 'vista3D'])
+    ->name('reservas.vista3d');
 
 });
             

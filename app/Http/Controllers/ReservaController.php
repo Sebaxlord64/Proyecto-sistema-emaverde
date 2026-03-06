@@ -229,4 +229,11 @@ class ReservaController extends Controller
         $ubicacion = Ubicacione::where('id_espacio', $id)->first();
         return response()->json(['id' => $ubicacion->id]);
     }
+
+   public function vista3D($id)
+{
+    $reserva = \App\Models\Reserva::findOrFail($id);
+    return view('reservas.espacio3d', compact('reserva'));
+}
+
 }
